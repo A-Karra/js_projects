@@ -5,7 +5,6 @@ const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo')
 
-
 // Event Listeners
 
 if( document.readyState !== 'loading' ) {
@@ -151,7 +150,11 @@ function getTodos() {
         todoDiv.appendChild(deletedButton);
 
         todoList.appendChild(todoDiv);
-
+        let status = todo.status;
+        if(status === "completed") {
+            todoDiv.classList.toggle("completed");
+            console.log(status);
+        }
     });
 }
 
@@ -192,8 +195,14 @@ function markCompleted(todo) {
     else {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
-
+    const todoIndex = todo.children[0].innerText;
     let index = todos.findIndex(obj => obj.todo==todoIndex);
-    todos[index].status = "completed";
-    localStorage.setItem('todos', JSON.stringify(todos));
+    if(todos[index].status === "uncompleted") {
+        todos[index].status = "completed";
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }
+    else {
+        todos[index].status = "uncompleted";
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }
 }
