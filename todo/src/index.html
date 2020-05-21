@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <header>
@@ -25,6 +25,7 @@
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="uncompleted">Uncompleted</option>
+                    <!-- <option value="deleted">Deleted</option> -->
                 </select>
             </div>
         </form>
@@ -33,11 +34,9 @@
             <ul class="todo-list"></ul>
         </div>
 
-        <br><br><br>
-
         <div class="footer"><p>Developed by Ankit Gupta</p></div>
 
 
-        <script src="app.js" async defer></script>
+        <script src="render.js" async defer></script>
     </body>
 </html>
